@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "filter-audio-files"
+version = "0.1.0"
+description = ""
+authors = ["brito1212 <felipef_brito@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+scikit-learn = "^1.4.1.post1"
+
+[tool.poetry.group.dev.dependencies]
+pydub = "^0.25.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
