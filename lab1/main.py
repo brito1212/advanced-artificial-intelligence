@@ -1,7 +1,11 @@
 import os
+import pydub
 from pydub import AudioSegment
+from pathlib import Path
 import numpy as np
 from sklearn.covariance import EllipticEnvelope
+
+pydub.AudioSegment.ffmpeg = "C:/ffmpeg/bin/ffmpeg.exe"
 
 
 # Função para converter arquivo MP3 em array numpy
@@ -15,7 +19,7 @@ def mp3_to_np(file_path):
 audio_arrays = []
 
 # Diretório onde estão os arquivos MP3
-input_dir = "tmp/audio_file"
+input_dir = Path(__file__).parent.joinpath("tmp", "audio_files")
 
 # Loop pelos arquivos no diretório
 for file_name in os.listdir(input_dir):
