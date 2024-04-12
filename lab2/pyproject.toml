@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "lab2"
+version = "0.1.0"
+description = ""
+authors = ["brito1212 <felipef_brito@outlook.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+librosa = "^0.10.1"
+pandas = "^2.2.2"
+scikit-learn = "^1.4.2"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
