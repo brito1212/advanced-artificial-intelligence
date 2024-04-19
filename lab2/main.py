@@ -69,7 +69,7 @@ def process_files(dir_path: Path):
     return features, file_names
 
 
-audio_files_path = destination_path = Path(__file__).parent / "tmp" / "audio_files"
+audio_files_path = Path(__file__).parent / "tmp" / "audio_files"
 # Process all files and extract features
 features, file_names = process_files(audio_files_path)
 
@@ -95,5 +95,8 @@ pipeline = Pipeline(
 # Apply the pipeline
 df[df.columns[1:]] = pipeline.fit_transform(df[df.columns[1:]])
 
+processed_audio_features_csv_path = (
+    Path(__file__).parent / "tmp" / "processed_audio_features.csv"
+)
 # Save the processed DataFrame to a CSV file
-df.to_csv("processed_audio_features.csv", index=False)
+df.to_csv(processed_audio_features_csv_path, index=False)
